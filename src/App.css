@@ -1,38 +1,215 @@
-.App {
+/* .App {
+  text-align: center;
+  margin: none;
+}
+
+body {
+  margin: 0px;
+}
+
+.Title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #674636;
+  border: 1rem solid #ffa27f;
+  border-style: inset;
+  width: 40px 40px;
+  background-color: #bedc74;
+  height: 20vh;
+  font-style: oblique;
+}
+
+.Googling {
+  margin: 50px;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.Googling input {
+  width: 40%;
+  height: 80px;
+  border-radius: 15px;
+}
+
+.Googling button {
+  margin: 50px;
+  width: 20%;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.Movies {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  justify-content: space-around;
+}
+
+.movie {
+  width: 200px;
+  margin: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie .img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+.MovieDetails {
+  width: 35%;
+  padding: 20px;
+  background-color: #f0f0f0;
+} */
+:root {
+  --primary-color: #3a6ea5;
+  --secondary-color: #c0d6df;
+  --accent-color: #ff6b6b;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Title {
+  background-color: var(--primary-color);
   color: white;
+  padding: 1rem 0;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.Title h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Googling {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+.Googling input {
+  width: 70%;
+  max-width: 500px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.Googling button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Googling button:hover {
+  background-color: #ff4757;
+}
+
+.Content {
+  padding: 1rem;
+}
+
+.Movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 7rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.movie {
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 150px;
+  margin: 0 auto;
+}
+
+.movie:hover {
+  transform: translateY(-5px);
+}
+
+.movie img {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+}
+
+.movie p {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.MovieDetails {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.MovieDetails h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.MovieDetails p {
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .Googling {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Googling input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .Googling button {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .Movies {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 }
