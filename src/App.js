@@ -16,7 +16,7 @@ function App() {
     setLoading(true);
 
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=83ddaace0e7e13a50f3dfb321d67d644&language=ko&query=${encodeURIComponent(
+      `https://api.themoviedb.org/3/search/movie?api_key={my_api_key}&language=ko&query=${encodeURIComponent(
         movieTitle
       )}&page=1&region=KR`
     )
